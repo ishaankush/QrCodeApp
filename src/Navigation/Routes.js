@@ -12,9 +12,39 @@ const Stack = createNativeStackNavigator();
 function Routes() {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="CreateQR" component={CreateQRScreen} />
-      <Stack.Screen name="ScanQR" component={ScanQRScreen} />
+      <Stack.Screen name="Home" component={HomeScreen}  options={{
+            title: "Quick QR",
+            headerTitleAlign: "center",
+            headerStyle: {
+              backgroundColor: '#ff4d4d',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }} />
+      <Stack.Screen name="CreateQR" component={CreateQRScreen} options={{
+            title: "Create QR",
+            headerTitleAlign: "center",
+            headerStyle: {
+              backgroundColor: '#ff4d4d',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
+      <Stack.Screen name="ScanQR" component={ScanQRScreen} options={{
+            title: "Scan QR",
+            headerTitleAlign: "center",
+            headerStyle: {
+              backgroundColor: '#ff4d4d',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}/>
     </Stack.Navigator>
   );
 }

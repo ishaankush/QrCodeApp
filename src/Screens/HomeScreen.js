@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
+      <Text style={{fontSize:20 ,marginVertical:20}} >Create or Scan QR Code easily</Text>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('CreateQR')}

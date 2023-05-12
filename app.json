@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "QrCodeApp",
-    "slug": "QrCodeApp",
+    "name": "QuickQR",
+    "slug": "QuickQRCreaterScanner",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
@@ -18,6 +18,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.aayft.QuickQR",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -25,6 +27,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fb1630f2-8f12-4062-983b-a72da983fcd4"
+      }
     }
   }
 }

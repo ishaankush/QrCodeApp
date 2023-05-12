@@ -54,10 +54,23 @@ export default function ScanQRScreen() {
       <Text style={styles.maintext}>{text}</Text>
 
       {scanned && (
-        <View>
-          <Button title={'Copy to Clipboard'} onPress={() => Clipboard.setString(text)} />
-          <Button title={'Scan again?'} onPress={() => setScanned(false)} color='tomato' />
+        <View style={styles.buttonsContainer}>
+        <View style={styles.button1}>
+        <Button
+          title={'Copy to Clipboard'}
+          onPress={() => Clipboard.setString(text)}
+          style={styles.button}
+        />
         </View>
+        
+        <Button 
+          title={'Scan again?'}
+          onPress={() => setScanned(false)}
+          color='tomato'
+          
+        />
+      </View>
+      
       )}
     </View>
   );
@@ -82,5 +95,15 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderRadius: 30,
     backgroundColor: 'tomato'
-  }
+  },
+  buttonsContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+    width: '100%',
+    paddingHorizontal: 40,
+  },
+  button1: {
+    marginBottom: 30,
+  },
 });
