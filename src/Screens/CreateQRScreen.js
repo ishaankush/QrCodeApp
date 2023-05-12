@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 
 function CreateQRScreen() {
@@ -11,17 +11,50 @@ function CreateQRScreen() {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
       <TextInput
-        style={{ borderWidth: 1, padding: 10, marginBottom: 20, width: 200 }}
+        style={styles.textInput}
         placeholder="Enter text"
         value={text}
         onChangeText={(value) => setText(value)}
       />
-      <Button title="Generate QR" onPress={handleGenerateQR} />
+      <TouchableOpacity style={styles.button} onPress={handleGenerateQR}>
+        <Text style={styles.buttonText}>Generate QR</Text>
+      </TouchableOpacity>
       {showQR && text !== '' && <QRCode value={text} size={200} />}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+  },
+  textInput: {
+    borderWidth: 2,
+    borderColor: 'blue',
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 20,
+    width: '80%',
+    fontSize: 18,
+    textAlign: 'center',
+  },
+  button: {
+    backgroundColor: 'blue',
+    borderRadius: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+});
 
 export default CreateQRScreen;
